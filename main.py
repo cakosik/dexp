@@ -12,6 +12,8 @@ from aiogram.fsm.state import State, StatesGroup
 import mysql.connector
 import re
 import os
+from fastapi import FastAPI, Request
+
 
 # === НАСТРОЙКИ ===
 BOT_TOKEN = "8060714191:AAHFe30t5RTBcqeBoAo4OqtZOFZOQevyNa8"
@@ -656,3 +658,4 @@ async def webhook_handler(request: Request):
     update = Update.model_validate(data)
     await dp.feed_update(bot, update)
     return {"ok": True}
+
